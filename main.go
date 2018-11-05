@@ -10,7 +10,7 @@ func main() {
 	router := Bootstrap.GetApp()
 
 	app := &http.Server{
-		Addr:           ":8080",
+		Addr:           ":9000",
 		Handler:        router,
 		ReadTimeout:    10 * time.Second,
 		WriteTimeout:   10 * time.Second,

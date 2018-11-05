@@ -11,7 +11,7 @@ func GetAllArticle() *[]MySQL.Article {
 	//if err != nil {
 	//	fmt.Println(err)
 	//}
-	db := GetDB()
+	//db := GetDB()
 
 	articles := []MySQL.Article{}
 	db.Find(&articles)
