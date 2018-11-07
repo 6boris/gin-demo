@@ -7,7 +7,7 @@ import (
 
 func GetDB() *gorm.DB {
 	db, err := gorm.Open("mysql", "root:@/blog?charset=utf8&parseTime=True&loc=Asia%2FShanghai")
-
+	db.LogMode(true)
 	if err != nil {
 		fmt.Println(err)
 	}

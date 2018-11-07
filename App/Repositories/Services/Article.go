@@ -5,15 +5,16 @@ import (
 	//"github.com/kylesliu/gin-demo/Bootstrap"
 )
 
-func GetAllArticle() *[]MySQL.Article {
-	//db, err := gorm.Open("mysql", "root:@/blog?charset=utf8&parseTime=True&loc=Asia%2FShanghai")
-	//
-	//if err != nil {
-	//	fmt.Println(err)
-	//}
+func GetAllArticle(group_id int) *[]MySQL.Article {
 	db := GetDB()
-
 	articles := []MySQL.Article{}
-	db.Find(&articles)
+
+	if group_id == 0 {
+		db.Find(&articles)
+
+	} else {
+		db.Where("g_id = ?", group_id).Find(&articles)
+	}
+
 	return &articles
 }

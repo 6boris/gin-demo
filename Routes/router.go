@@ -7,8 +7,8 @@ import (
 
 func InitRouter(app *gin.Engine) *gin.Engine {
 	app.GET("/v1/articles", v1.GetAllArticle)
-	app.GET("/v1/article", v1.GetOneArticle)
-	app.GET("/v1/articles/groups", v1.GetAllArticleGroup)
+	app.GET("/v1/articles/:id", v1.GetOneArticle)
+	app.GET("/v1/article_groups", v1.GetAllArticleGroup)
 
 	return app
 }
