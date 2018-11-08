@@ -17,6 +17,7 @@ type Server struct {
 var ServerConfig = &Server{}
 
 type MySQL struct {
+	Debug       bool
 	Type        string
 	User        string
 	Password    string

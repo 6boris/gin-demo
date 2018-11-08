@@ -19,8 +19,8 @@ func MySQLSetup() {
 		config.MySQLConfig.Host,
 		config.MySQLConfig.Name))
 
+	db.LogMode(config.MySQLConfig.Debug)
 	//db, err = gorm.Open("mysql", "root:@/blog?charset=utf8&parseTime=True&loc=Asia%2FShanghai")
-	fmt.Println(config.MySQLConfig)
 	if err != nil {
 		log.Println(err)
 	}
