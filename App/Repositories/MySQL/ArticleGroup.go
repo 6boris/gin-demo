@@ -11,5 +11,5 @@ type ArticleGroup struct {
 }
 
 func (self ArticleGroup) TableName() string {
-	return "blog_article_group"
+	return "article_group"
 }

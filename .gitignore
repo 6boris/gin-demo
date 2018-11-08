@@ -13,4 +13,4 @@
 .vs/
 .idea/
 /vendor/
-
+env.example.ini
