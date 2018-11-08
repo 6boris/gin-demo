@@ -7,6 +7,7 @@ import (
 
 func GetAllArticle(group_id int) *[]MySQL.Article {
 	db := GetDB()
+
 	articles := []MySQL.Article{}
 
 	if group_id == 0 {
