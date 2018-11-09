@@ -5,6 +5,7 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"time"
 )
 
 func IndexLogin(c *gin.Context) {
@@ -19,7 +20,8 @@ func IndexLogin(c *gin.Context) {
 	claims := MyCustomClaims{
 		"bar",
 		jwt.StandardClaims{
-			ExpiresAt: 15000,
+			Audience:  "1",
+			ExpiresAt: time.Now().Unix(),
 			Issuer:    "index.auth",
 		},
 	}

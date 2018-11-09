@@ -6,6 +6,5 @@ import (
 
 func main() {
 	router := Bootstrap.GetApp()
-
 	router.ListenAndServe()
 }

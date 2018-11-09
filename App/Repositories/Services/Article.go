@@ -6,10 +6,7 @@ import (
 
 func GetOneArticle(id int) *MySQL.Article {
 	article := MySQL.Article{}
-	//article.Id = id
-
-	db.Where("id = ?", id).Find(&article)
-
+	db.Table("blog_article").Where("id = ?", id).Find(&article)
 	return &article
 }
 

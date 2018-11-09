@@ -20,8 +20,9 @@ func GetAllArticle(c *gin.Context) {
 }
 
 func GetOneArticle(c *gin.Context) {
-	article_id, _ := strconv.Atoi(c.Query("id"))
-	fmt.Println(article_id)
+	article_id, _ := strconv.Atoi(c.Param("id"))
+
+	fmt.Println(c.Param("id"))
 
 	article := Services.GetOneArticle(article_id)
 
