@@ -1,6 +1,7 @@
 package Bootstrap
 
 import (
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/kylesliu/gin-demo/App/Repositories/Services"
 	"github.com/kylesliu/gin-demo/Bootstrap/config"
@@ -14,6 +15,9 @@ func GetApp() *http.Server {
 	route := gin.New()
 	//gin.SetMode(config.ServerSetting.RunMode)
 	gin.SetMode("debug")
+
+	route.Use(cors.Default())
+
 	route.Use(gin.Logger())
 	route.Use(gin.Recovery())
 
