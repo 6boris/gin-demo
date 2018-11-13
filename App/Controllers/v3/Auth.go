@@ -19,12 +19,10 @@ func AdminLogin(c *gin.Context) {
 		})
 		return
 	}
-
 	c.JSON(http.StatusOK, gin.H{
 		"msg":  "登录成功",
 		"data": admin,
 	})
-
 }
 
 func AdminRegister(c *gin.Context) {

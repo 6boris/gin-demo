@@ -6,6 +6,13 @@ import (
 	"time"
 )
 
+type App struct {
+	SecretKey  string
+	EncryptKey string
+}
+
+var AppConfig = &App{}
+
 type Server struct {
 	RunMode      string
 	HttpPort     int
@@ -28,6 +35,12 @@ type MySQL struct {
 
 var MySQLConfig = &MySQL{}
 
+type Jwt struct {
+	Secret string
+}
+
+var JwtConfig = &Jwt{}
+
 var cfg *ini.File
 
 func Setup() {
@@ -36,8 +49,10 @@ func Setup() {
 	if err != nil {
 		log.Fatalf("Fail to parse 'env.ini': %v", err)
 	}
+	mapTo("app", AppConfig)
 	mapTo("server", ServerConfig)
 	mapTo("mysql", MySQLConfig)
+	mapTo("jwt", JwtConfig)
 }
 
 func mapTo(section string, v interface{}) {
